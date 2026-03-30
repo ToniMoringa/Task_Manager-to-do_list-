@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center horiz */
+    align-items: flex-start; /* mobile scroll  */
+    min-height: 100vh;
+    background-color: #fdf5f0; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    overflow-x: hidden; /* x side-scrolling on mobile */
+}
+
+.app-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* iPhone width */
+    margin: 40px 20px; /* responsive on mobile */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gradient-bg {
+    position: absolute;
+    top: 20%;
+    right: 2%;
+    width: 140%;
+    transform: translate(-80%, -70%);
+    z-index: 1; /* layering below text */
+    pointer-events: none; /*  click through bg*/
+}
+
+.app-content {
+    position: relative;
+    z-index: 2; /* bring to front */
+    text-align: center;
+}
+
+.task-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #333; /* checkbox color on checked */
+    cursor: pointer;
+}
+
+task-item {
+    background: rgba(255, 255, 255, 0.5); /* Glass look */
+    backdrop-filter: blur(8px);
+    /*layout */
+    display: flex;
+    align-items: center;
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    /* shape + borders + depth */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.task-text {
+   flex-grow: 1;
+    text-align: left;
+    margin-left: 12px;
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+}
+
+.drag-handle {
+    cursor: grab; /* mouse = hand */
+    color: #c5c2c2;
+    font-weight: bold;
+    letter-spacing: 1px;
+    user-select: none; /* prevent highlighting text */
+}
+
+.drag-handle:active {
+    cursor: grabbing; /* cursor = closed fist on click */
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+#task-input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+#add-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.footer-text {
+    margin-top: 50px;
+    font-size: 0.75rem;
+    color: #999;
+}
